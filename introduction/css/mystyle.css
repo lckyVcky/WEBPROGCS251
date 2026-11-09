@@ -1,8 +1,46 @@
 body {
-  background-color: rgb(156, 175, 136);
+  background-color: #E3CAFB;
+  color: #000000;
+  scroll-behavior: smooth;
 }
 
 h1 {
-  color: rgb(153, 102, 204);
+  color: #7F12E7;
   margin-left: 20px;
+}
+
+h2 {
+  color: #983DEF;
+}
+
+nav a {
+  color: #7F12E7;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  color: #983DEF;
+}
+
+.section {
+  background-color: #FCF9FF;
+  border: 2px solid #CA9BF7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 20px;
+}
+
+table, th, td {
+  border: 1px solid #B16CF3;
+  border-collapse: collapse;
+  padding: 6px 10px;
+}
+
+th {
+  background-color: #CA9BF7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
