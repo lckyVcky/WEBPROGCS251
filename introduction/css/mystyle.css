@@ -44,3 +44,19 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.container {
+  display: flex;        
+  flex-wrap: wrap;      
+  background-color: var(--purple-dark);
+}
+
+.container div {
+  background-color: var(--purple-light);
+  color: var(--purple-dark);
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
