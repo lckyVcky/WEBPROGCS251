@@ -36,8 +36,9 @@ body {
 
 main,
 nav {
-  width: min(85%, 1400px);
-  margin: auto;
+  width: 95%;
+  max-width: 1400px;
+  margin:0 auto;
 }
 
 nav {
@@ -240,7 +241,7 @@ img {
 
 .pics {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.7rem;
 }
 
@@ -252,7 +253,7 @@ img {
 
 .friends-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: reapeat(2,1fr);
   gap: 0.7rem;
   margin-top: 14px;
 }
