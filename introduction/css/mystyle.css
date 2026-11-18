@@ -31,13 +31,12 @@ body {
   color: var(--ink);
   font-family: "DM Sans", system-ui, sans-serif;
   line-height: 1.6;
-  padding: 1.2rem 1.5rem 3rem;
+  padding: 1rem 0.5rem 3rem;
 }
 
 main,
 nav {
-  width: 100%;
-  max-width: 1400px;
+  width: min (80vw, 1800px);
   margin: 0 auto;
 }
 
