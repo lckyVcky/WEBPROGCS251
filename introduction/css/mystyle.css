@@ -31,14 +31,14 @@ body {
   color: var(--ink);
   font-family: "DM Sans", system-ui, sans-serif;
   line-height: 1.6;
-  padding: 1rem 0.25rem 3rem;
+  padding: 1rem;
 }
 
 main,
 nav {
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav {
