@@ -1,62 +1,106 @@
+:root {
+  --plum: #624a72;       
+  --plum-deep: #4a3659;  
+  --lilac: #a98cc3;
+  --lavender: #c8b6e2;
+  --blush: #f3cbdd;
+  --pearl: #f8f4f0;
+  --ink: #2f2038;       
+  --radius: 24px;
+  --gap: 18px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
 body {
-  background-color: #E3CAFB;
-  color: #000000;
-  scroll-behavior: smooth;
+  background: radial-gradient(circle at 15% 0%, #7a5d8e 0%, var(--plum) 45%, #54406a 100%) fixed;
+  color: var(--ink);
+  font: 16px/1.6 "DM Sans", system-ui, sans-serif;
+  padding: 20px;
 }
+main, nav { max-width: 1000px; margin: 0 auto; }
 
-h1 {
-  color: #7F12E7;
-  margin-left: 20px;
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+  position: sticky;
+  top: 12px;
+  z-index: 5;
 }
-
-h2 {
-  color: #983DEF;
-}
-
 nav a {
-  color: #7F12E7;
-  margin-right: 10px;
-}
-
-nav a:hover {
-  color: #983DEF;
-}
-
-.section {
-  background-color: #FCF9FF;
-  border: 2px solid #CA9BF7;
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin: 16px 20px;
-}
-
-table, th, td {
-  border: 1px solid #B16CF3;
-  border-collapse: collapse;
-  padding: 6px 10px;
-}
-
-th {
-  background-color: #CA9BF7;
-}
-
-img {
-  max-width: 80%;
-  height: auto;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: var(--purple-dark);
-}
- 
-.container div {
-  background-color: var(--purple-lightest);
-  color: var(--purple-dark);
-  width: 100px;
-  margin: 10px;
-  padding: 10px;
+  background: var(--pearl);
+  color: var(--plum);
   text-align: center;
-  font-size: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 999px;
+}
+nav a:hover, nav a:focus-visible { background: var(--blush); outline: 2px solid var(--pearl); }
+
+
+h1, h2 { font-family: "Playfair Display", serif; font-style: italic; font-weight: 700; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 8px; }
+h2 { font-size: 1.7rem; margin-bottom: 12px; }
+h2::after { content: " ✦"; font-size: .6em; vertical-align: middle; opacity: .6; }
+
+
+.card { border-radius: var(--radius); padding: 24px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap); margin-top: var(--gap); }
+.wide { grid-column: 1 / -1; }
+
+
+.blush { background: var(--blush); }
+.pearl { background: var(--pearl); }
+.lilac { background: var(--lilac); }
+.plum  { background: var(--plum-deep); color: var(--pearl); }
+
+
+.profile { background: var(--lavender); display: flex; gap: 28px; align-items: center; }
+.pfp {
+  width: 170px; height: 170px; flex: none;
+  border-radius: 50%; object-fit: cover;
+  background: var(--blush); color: var(--plum);
+  display: grid; place-items: center;
+  font: italic 700 3rem "Playfair Display", serif;
+  border: 5px solid var(--pearl);
+}
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 18px; }
+dt { font-weight: 700; }
+dd a { color: inherit; }
+
+
+.tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tags li { border: 1.5px solid currentColor; border-radius: 999px; padding: 2px 14px; }
+.tags li:has(a) { padding: 0; }
+.tags li a { display: block; padding: 2px 14px; border-radius: 999px; color: inherit; text-decoration: none; }
+.tags li a:hover, .tags li a:focus-visible { background: var(--pearl); color: var(--plum-deep); }
+
+
+.ph {
+  background: rgba(255, 255, 255, .35);
+  border: 2px dashed currentColor;
+  border-radius: 16px;
+  min-height: 130px;
+  display: grid; place-items: center;
+  font-size: .9rem; opacity: .8;
+}
+.pics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.gallery .ph { min-height: 150px; }
+
+.pics .ph, .gallery .ph { aspect-ratio: 1; min-height: 0; }
+.pics img, .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+img { max-width: 100%; border-radius: 16px; display: block; }
+
+
+@media (max-width: 700px) {
+  .profile { flex-direction: column; text-align: center; }
+  dl { text-align: left; }
+  .grid { grid-template-columns: 1fr; }
+  nav { position: static; }
 }
